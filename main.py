@@ -1,6 +1,28 @@
+# webpydes1 in github repo
 # https://www.youtube.com/watch?v=vusUfPBsggw&list=PLlvFEn0NKwXKKGUESVoKdeC6umLFKcAlk&index=1&t=132s
 import tkinter
 from tkinter import ttk
+def enter_data():
+    firstname = first_name_entry.get()
+    lastname = last_name_entry.get()
+    title = title_combobox.get()
+    age = age_spinbox.get()
+    nationality=nationality_combobox.get()
+    
+    # registration_status = registered_check.get()
+    numcourses = numcourses_spinbox.get()
+    numsemesters = numsemesters_spinbox.get()
+    registration_status =reg_status_var.get()
+    
+    
+    
+    print('first name: ',firstname, 'last name: ',lastname)
+    print("Title: ",title,"Age: ",age,"Nationality: ",nationality )
+    print("#Courses: ",numcourses, "#Semesters: ",numsemesters)
+    print("Registration status",registration_status)
+    print("--------------------------------------------------------")
+    
+    
 
 window = tkinter.Tk()
 window.title("data entry form")
@@ -46,7 +68,8 @@ courses_frame = tkinter.LabelFrame(frame)
 courses_frame.grid(row=1,column=0,sticky="news",padx=20,pady=10)
 
 registered_label = tkinter.Label(courses_frame,text="Registration status")
-registered_check = tkinter.Checkbutton(courses_frame,text="currently registered")
+reg_status_var = tkinter.StringVar()
+registered_check = tkinter.Checkbutton(courses_frame,text="currently registered",variable= reg_status_var,onvalue="Registered",offvalue="Not registered")
 registered_label.grid(row=0,column=0)
 registered_check.grid(row=1,column=0)
 
@@ -68,7 +91,7 @@ for widget in courses_frame.winfo_children():
     terms_check=tkinter.Checkbutton(terms_frame,text="i accept terms and conditions")
     terms_check.grid(row=0,column=0)
     
-    button = tkinter.Button(frame, text="Enter data" )
+    button = tkinter.Button(frame, text="Enter data", command = enter_data )
     button.grid(row=3,column=0,sticky='news',padx=20,pady=10)
     # https://youtu.be/vusUfPBsggw?list=PLlvFEn0NKwXKKGUESVoKdeC6umLFKcAlk&t=2249
                                            
