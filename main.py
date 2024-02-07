@@ -68,7 +68,7 @@ for widget in courses_frame.winfo_children():
     terms_check=tkinter.Checkbutton(terms_frame,text="i accept terms and conditions")
     terms_check.grid(row=0,column=0)
     
-    button = tkinter.Button(frame, text="Enter data")
+    button = tkinter.Button(frame, text="Enter data" )
     button.grid(row=3,column=0,sticky='news',padx=20,pady=10)
     # https://youtu.be/vusUfPBsggw?list=PLlvFEn0NKwXKKGUESVoKdeC6umLFKcAlk&t=2249
                                            
